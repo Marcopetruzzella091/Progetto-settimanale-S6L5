@@ -24,7 +24,7 @@ class ProgettoController extends Controller
     { 
        
        
-       $progetto = Progetto  :: with('attivita')/* ->where('user_id', '=', Auth::user()->id) */->get(); // ritorna tutti i progetti
+       $progetto = Progetto  :: with('attivita') ->where('user_id', '=', Auth::user()->id) ->get(); // ritorna tutti i progetti
         //return Auth::user(); // legge l'utente loggato
        // $progetto = Progetto::with('attivita')->where('user_id', '=', Auth::user()->id)->get(); // 
         return view('webapp.homepage', ['progetto' =>  $progetto]);
@@ -79,10 +79,18 @@ class ProgettoController extends Controller
 
   
     public function show(Progetto $Progetto)
-    {    Log::info($Progetto->load('attivita'));
-         return   view ('webapp.detailpage', ['progetto' => $Progetto  ->load ('attivita')]); ;
-      //return $Progetto;
+    {    
+         //return   view ('webapp.detailpage', ['progetto' => $Progetto  ->load ('attivita')]); ;
+      return $Progetto -> id () -> load ('attivita') ;
     }
+
+    
+    public function show2($id)
+    {    
+        $progetto = Progetto  :: with('attivita') ->where( 'id' , '=', $id) ->get();
+      return $progetto ;
+    }
+
 
     /**
      * Show the form for editing the specified resource.

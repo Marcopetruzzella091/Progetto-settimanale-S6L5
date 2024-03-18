@@ -12,10 +12,7 @@ use App\Models\Progetto;
 class Attivita extends Model
 {
     use HasFactory;
-    public function progetto()
-    {
-        return $this->belongsTo(Progetto::class);
-    }
+  
     
  
 }

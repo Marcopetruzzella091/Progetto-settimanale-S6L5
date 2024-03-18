@@ -36,4 +36,6 @@ Route::middleware('auth')->group(function () {
 
 Route::resource('/progetti', ProgettoController::class )->middleware(['auth', 'verified']); 
 
+Route::get('/progetto/{id}/', [ProgettoController::class, 'show2'])->middleware(['auth', 'verified']);
+
 require __DIR__.'/auth.php';

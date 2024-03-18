@@ -41,7 +41,7 @@
         <td>{{$value->user_id}}</td>
         <td>{{$value->created_at}}</td>
         <td>{{$value->updated_at}}</td>
-        <td><a href="/progetti/{{$value->id}}/" class="btn btn-info text-white">dettaglio</a></td>
+        <td><a href="/progetto/{{$value->id}}/" class="btn btn-info text-white">dettaglio</a></td>
         <td>
         
         <a href="progetto/{{$value->id}}/destroy" class="btn btn-danger">Elimina</a></td>

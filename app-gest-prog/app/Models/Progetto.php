@@ -20,8 +20,5 @@ class Progetto extends Model
     {
         return $this->hasMany(Attivita::class);
     }
-    public function user(): BelongsTo
-    {
-        return $this->belongsTo(User::class);
-    }
+   
 }
